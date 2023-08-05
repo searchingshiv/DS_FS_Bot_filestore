@@ -81,10 +81,10 @@ async def start_command(client: Client, message: Message):
             except FloodWait as e:
                 await asyncio.sleep(e.x)
                 await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
-            await asyncio.sleep(60)
-            await msg.delete()
             except:
                 pass
+            await asyncio.sleep(60)
+            await msg.delete()
         return
     else:
         reply_markup = InlineKeyboardMarkup(
